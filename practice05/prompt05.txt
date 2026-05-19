@@ -1,0 +1,10 @@
+1.创建practice05目录 ，复制practice04中的代码，实现下面的新功能：
+开发anythingllm_query function ：
+- 使用 subprocess 模块调用curl命令，访问http://localhost:3001/api/v1/workspace/{workspace_slug}/chat 的聊天API接口访问AnythingLLM的数据，注意中文编码的问题
+- 使用 message 字段发送查询
+- 使用API密钥进行认证
+- 在.env文件中读取ANYTHINGLLM_API_KEY、ANYTHINGLLM_WORKSPACE_SLUG变量
+- 如果遇到错误，认真阅读 http://localhost:3001/api/docs/ 的文档
+2.修改chat_client.py ：
+- 添加新的anythingllm_query工具定义和function call调用，更新系统可用function 列表
+- 更新系统提示词，明确当用户提到“文档仓库”、“文件仓库”、“仓库”时触发anythingllm_query工具
